@@ -15,8 +15,6 @@ class CustomTask(CustomFuture):
     def step(self, result=None):
         try:
             self._curr_future = self._coro.send(result)
-            # StopIteration is raised BEFORE it goes further
-            self._curr_future.add_done_callback(self.step)
         except StopIteration as si:
             self.set_result(si.value)
 

@@ -1,4 +1,3 @@
-from selectors import BaseSelector
 from typing import Callable
 import socket
 import functools
@@ -6,6 +5,7 @@ import selectors
 import time
 from custom_future import CustomFuture
 from custom_task import CustomTask, Timer
+
 
 _loop = None
 
